@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
         binding.sampleText.text = stringFromJNI()
 
         binding.sumText.text = "sum:" + summaryFromJNI(3, 5).toString()
+
+        binding.flipText.text = flipString("hello")
     }
 
     /**
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     external fun stringFromJNI(): String
 
     external fun summaryFromJNI(num1: Int, num2: Int): Int
+
+    external fun flipString(str: String): String
 
     companion object {
         // Used to load the 'mydemo' library on application startup.
